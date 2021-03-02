@@ -1,4 +1,4 @@
-# Construisez un site web à l’aide du framework Symfony 5
+# Construisez un site web à l’aide du framework Symfony 4
 
 ## Setup
 
@@ -16,27 +16,27 @@ Write into profile : `export PATH="$HOME/.symfony/bin:$PATH"`
 
 ## Creating Symfony applications
 
-Install web-skeleton: `symfony new my_project_name --full`
+Install web-skeleton: `symfony new my_project_name --version=4.4 --full`
 
 ## Running Symfony Applications
 
-Start php server: `symfony server:start`
+Start php server: `symfony server:start` or `symfony serve -d`
 
-Open your browser and navigate to: [here](https://localhost:8000/)
+Open your browser and navigate [to](https://localhost:8000/)
 
 ## Requêtes et réponses en Symfony
 
-Utiliser [ttpFoundation](https://symfony.com/doc/current/components/http_foundation.html)
+Utiliser [ttpFoundation](https://symfony.com/doc/4.4/components/http_foundation.html)
 
 ## La gestion du "routing"
 
-Utiliser le composant [Routing](https://symfony.com/doc/current/components/routing.html)
+Utiliser le composant [Routing](https://symfony.com/doc/4.4/components/routing.html)
 
 Debugger: `php bin/console debug:router`
 
 ## Le controleur front
 
-Utiliser le composant [HttpKernel](https://symfony.com/doc/current/components/http_kernel.html)
+Utiliser le composant [HttpKernel](https://symfony.com/doc/4.4/components/http_kernel.html)
 
 ## Créer un controleur
 
