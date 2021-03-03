@@ -16,12 +16,15 @@ Write into profile : `export PATH="$HOME/.symfony/bin:$PATH"`
 
 ### The PHPUnit Testing Framework
 
- Install the [PHPUnit Bridge component](https://symfony.com/components/PHPUnit%20Bridge): `composer require --dev symfony/phpunit-bridge`
- Then use command:
+Install the [PHPUnit Bridge component](https://symfony.com/components/PHPUnit%20Bridge): `composer require --dev symfony/phpunit-bridge`
+Read the [doc](https://symfony.com/doc/current/testing.html)
+Create a test file `symfony console make:test`
+Then use command:
 
 ```bash
 # run all tests
 php bin/phpunit
+symfony php bin/phpunit
 # run all tests in tests/Util
 php bin/phpunit tests/Util
 # run all tests in tests/Util/CalculatorTest.php
@@ -30,7 +33,7 @@ php bin/phpunit tests/Util/CalculatorTest.php
 
 ## Creating Symfony applications
 
-Install web-skeleton: `symfony new my_project_name --full`
+Install web-skeleton: `symfony new my_project_name --version=current --full`
 
 ## Running Symfony Applications
 
@@ -40,17 +43,17 @@ Open your browser and navigate [to](https://localhost:8000/)
 
 ## Requêtes et réponses en Symfony
 
-Utiliser [ttpFoundation](https://symfony.com/doc/4.4/components/http_foundation.html)
+Utiliser [ttpFoundation](https://symfony.com/doc/current/components/http_foundation.html)
 
 ## La gestion du "routing"
 
-Utiliser le composant [Routing](https://symfony.com/doc/4.4/components/routing.html)
+Utiliser le composant [Routing](https://symfony.com/doc/current/components/routing.html)
 
 Debugger: `php bin/console debug:router`
 
 ## Le controleur front
 
-Utiliser le composant [HttpKernel](https://symfony.com/doc/4.4/components/http_kernel.html)
+Utiliser le composant [HttpKernel](https://symfony.com/doc/current/components/http_kernel.html)
 
 ## Créer un controleur
 
