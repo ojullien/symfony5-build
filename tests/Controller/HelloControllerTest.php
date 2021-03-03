@@ -64,13 +64,13 @@ class IndexControllerTest extends WebTestCase
      * @throws ServiceCircularReferenceException
      * @throws ServiceNotFoundException
      */
-    public function no_testHelloWithAnEvent(): void
+    public function testHelloWithAnEvent(): void
     {
         $client = static::createClient();
         $client->catchExceptions(false);
         $client->request('GET', '/hello-world/zozor');
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Bienvenue parmi nous zozor !', 'L\'événement ne fonctionne pas');
+        $this->assertSelectorExists('p:contains("Bienvenue parmi nous zozor !")', 'L\'événement ne fonctionne pas');
     }
 
 }
