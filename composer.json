@@ -1,6 +1,8 @@
 {
+    "name": "ojullien/symfony4-build",
+    "description": "A blog project using Symfony 4, for teaching purposes",
+    "license": "MIT",
     "type": "project",
-    "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
