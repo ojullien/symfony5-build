@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Le blog de Zozor!{% endblock%}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+{% endblock%}
+
+{% block main %}
+<h1>Page d'accueil: bienvenue sur le Blog de Zozor!</h1>
+<div>
+    <ul>
+    {% for i in 0..10 %}
+        {% if i % 2 == 0 %}
+            <li>{{ i }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('build/js/app.js') }}"></script>
+{% endblock %}
