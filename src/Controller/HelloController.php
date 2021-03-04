@@ -42,7 +42,8 @@ class HelloController extends AbstractController
     #[Route('/hello-world/{name}', name: 'hello', methods: ['GET'])]
     public function hello(EventDispatcherInterface $theEventDispatcher, string $name="world" ): Response
     {
-        $httpResponse = new Response('<h1>Hello '. \ucfirst($name) . '</h1>');
+        //$httpResponse = new Response('<h1>Hello '. \ucfirst($name) . '</h1>');
+        $httpResponse = $this->render('hello/index.html.twig', ['visitor_name' => \ucfirst($name),]);
         $theEvent = new HelloEvent( $httpResponse, $name );
         $theEventDispatcher->dispatch($theEvent, HelloEvent::NAME);
         return $httpResponse;

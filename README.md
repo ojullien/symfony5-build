@@ -41,6 +41,24 @@ Start php server: `symfony server:start` or `symfony serve -d`
 
 Open your browser and navigate [to](https://localhost:8000/)
 
+### The VarDumper Component
+
+The VarDumper component provides mechanisms for extracting the state out of any PHP variables. Built on top, it provides a better dump() function that you can use instead of var_dump.
+
+Start the server : `php bin/console server:dump`
+
+Store the dumped data : `php bin/console server:dump --format=html > dump.html`
+
+## Environnement
+
+Read [doc](https://symfony.com/doc/current/configuration.html#creating-a-new-environment)
+
+## Profileur Web
+
+**Firefox strict content security policy will block the debug javascript!**
+
+**Symfony do not inject debug bar when using direct response. Use twig!**
+
 ## Requêtes et réponses en Symfony
 
 Utiliser [ttpFoundation](https://symfony.com/doc/current/components/http_foundation.html)
