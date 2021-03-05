@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <h1>Intégration d'un formulaire avec champs imbriqués</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>Le résultat de vos essais ci-dessous:</p>
+            {# {{ form(shoe_form) }} #}
+{{ form_start(shoe_form) }}
+    {{ form_row(shoe_form.name) }}
+    {{ form_row(shoe_form.description) }}
+    {{ form_row(shoe_form.price) }}
+    <h3>Sizes</h3>
+    <ul class="sizes">
+        {% for element in shoe_form.sizes %}
+            <li>{{ form_row(element.size) }}</li>
+        {% endfor %}
+    </ul>
+{{ form_end(shoe_form) }}
+        </div>
+    </div>
+{% endblock %}

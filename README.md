@@ -113,4 +113,13 @@ Read the docs about:
 
 - [twig](https://twig.symfony.com/)
 - [Forms](https://symfony.com/doc/current/forms.html)
+- [Form types](https://symfony.com/doc/current/reference/forms/types.html)
+- [Validation](https://symfony.com/doc/current/validation.html)
 - [Validation Constraints](https://symfony.com/doc/current/reference/constraints.html)
+
+Use the commands:
+
+```bash
+php bin/console debug:validator 'App\Entity\SomeClass'
+php bin/console debug:validator src/Entity
+```
