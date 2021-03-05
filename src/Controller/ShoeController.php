@@ -21,7 +21,7 @@ class ShoeController extends AbstractController
     {
         // creates a shoe object and initializes some data for this example
         //$pShoe = new Shoe('Vanez', 25, 'Une belle description de chaussure');
-                $pShoe = new Shoe();
+        $pShoe = new Shoe();
         $pShoe->setSizes([
             new Size(37.5),
             new Size(38),
