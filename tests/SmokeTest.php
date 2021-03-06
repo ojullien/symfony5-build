@@ -15,6 +15,7 @@ class SmokeTest extends WebTestCase
     public function testPageIsSuccessful(string $sPageName, string $sUrl): void
     {
         $client = self::createClient();
+        $client->catchExceptions(false);
         $client->request('GET', $sUrl);
         $this->assertResponseIsSuccessful(sprintf('La page "%s" devrait être accessible', $sPageName));
     }
