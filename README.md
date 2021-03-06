@@ -146,6 +146,30 @@ php bin/console debug:validator 'App\Entity\SomeClass'
 php bin/console debug:validator src/Entity
 ```
 
+## Databases and the Doctrine ORM
+
+Read the [doc here](https://symfony.com/doc/current/doctrine.html)
+
+### Configuring the Database
+
+Update .env.local file and run the command `php bin/console doctrine:database:create`
+
+### Creating an Entity Class
+
+Uses the command: `php bin/console make:entity`
+
+Note: If you prefer to add new properties manually, the make:entity command can generate the getter & setter methods for you: `php bin/console make:entity --regenerate`
+
+### Creating the controller and the templates
+
+Uses the command: `php bin/console make:crud`
+
+### Creating the Database Tables/Schema
+
+Uses this command to create the migration: `php bin/console make:migration`
+
+Uses this command to run the migration: `php bin/console doctrine:migrations:migrate`
+
 ## Get ready for production
 
 ### Clear the cache
