@@ -2,17 +2,21 @@
 
 ## Setup
 
+### Symfony CLI
+
+Download and install CLI: `wget https://get.symfony.com/cli/installer -O - | bash`
+
+Write into profile : `export PATH="$HOME/.symfony/bin:$PATH"`
+
 ### Symfony certificate
 
 Install certutil tool: `apt install libnss3-tools`
 
 Install certificate: `symfony server:ca:install`
 
-### Symfony CLI
+### WebDriver
 
-Download and install CLI: `wget https://get.symfony.com/cli/installer -O - | bash`
-
-Write into profile : `export PATH="$HOME/.symfony/bin:$PATH"`
+Instal ChromeDriver and geckodriver: `apt-get install chromium-chromedriver firefox-geckodriver`
 
 ## Creating Symfony applications
 
@@ -34,6 +38,8 @@ php bin/phpunit tests/Util
 # run all tests in tests/Util/CalculatorTest.php
 php bin/phpunit tests/Util/CalculatorTest.php
 ```
+
+Note: *To use Panther with PHPUnit, uncomment the snippet registering the Panther extension in phpunit.xml.dist*
 
 ### Linter others tools
 

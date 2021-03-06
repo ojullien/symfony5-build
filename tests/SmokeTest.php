@@ -4,29 +4,28 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\Panther\PantherTestCase;
 
-class SmokeTest extends WebTestCase
+class SmokePantherTest extends PantherTestCase
 {
 
     /**
      * @dataProvider provideUrls
      */
-    public function testPageIsSuccessful(string $sPageName, string $sUrl): void
+    public function testPageIsSuccessful(string $sTitle, string $sUrl): void
     {
-        $client = self::createClient();
-        $client->catchExceptions(false);
-        $client->request('GET', $sUrl);
-        $this->assertResponseIsSuccessful(sprintf('La page "%s" devrait être accessible', $sPageName));
+        $client = self::createPantherClient();
+        $pCrawler = $client->request('GET', $sUrl);
+        $this->assertPageTitleContains($sTitle);
     }
 
     public function provideUrls()
     {
         return [
-            'accueil' => ['Home', '/'],
+            'accueil' => ['Le blog de Zozor!', '/'],
             'world' => ['Hello World', '/hello-world'],
-            'hello' => ['Hello oju', '/hello-world/oju'],
-            'Shoe' => ['Shoe', '/shoe'],
+            'hello' => ['Hello Oju', '/hello-world/oju'],
+            'Shoe' => ['Add my shoe', '/shoe'],
         ];
     }
 }
