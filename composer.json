@@ -94,7 +94,8 @@
             "@auto-scripts"
         ],
         "fixer": "vendor/bin/php-cs-fixer fix --allow-risky=yes --verbose --diff src",
-        "stan": "vendor/bin/phpstan analyse -c .phpstan.neon --no-progress"
+        "stan": "vendor/bin/phpstan analyse -c .phpstan.neon --no-progress",
+        "test": "vendor/bin/simple-phpunit"
     },
     "conflict": {
         "symfony/symfony": "*"

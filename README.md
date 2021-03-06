@@ -16,7 +16,7 @@ Install certificate: `symfony server:ca:install`
 
 ### WebDriver
 
-Instal ChromeDriver and geckodriver: `apt-get install chromium-chromedriver firefox-geckodriver`
+Instal ChromeDriver and geckodriver if using [Panther component](https://github.com/symfony/panther): `apt-get install chromium-chromedriver firefox-geckodriver`
 
 ## Creating Symfony applications
 
@@ -25,6 +25,7 @@ Install web-skeleton: `symfony new my_project_name --version=current --full`
 ### The PHPUnit Testing Framework
 
 Install the [PHPUnit Bridge component](https://symfony.com/components/PHPUnit%20Bridge): `composer require --dev symfony/phpunit-bridge`
+Install the [Panther component](https://github.com/symfony/panther) if needed: `composer req --dev symfony/panther`
 Read the [doc](https://symfony.com/doc/current/testing.html)
 Create a test file `symfony console make:test`
 Then use command:
@@ -144,3 +145,20 @@ Use the commands:
 php bin/console debug:validator 'App\Entity\SomeClass'
 php bin/console debug:validator src/Entity
 ```
+
+## Get ready for production
+
+### Clear the cache
+
+```bash
+php bin/console cache:clear`
+php bin/console cache:clear --env=prod
+```
+
+### Customize Error Pages
+
+Read the [documentation](https://symfony.com/doc/current/controller/error_pages.html)
+
+### Checking Security Vulnerabilities
+
+Use: `symfony check:security`
