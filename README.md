@@ -14,6 +14,10 @@ Download and install CLI: `wget https://get.symfony.com/cli/installer -O - | bas
 
 Write into profile : `export PATH="$HOME/.symfony/bin:$PATH"`
 
+## Creating Symfony applications
+
+Install web-skeleton: `symfony new my_project_name --version=current --full`
+
 ### The PHPUnit Testing Framework
 
 Install the [PHPUnit Bridge component](https://symfony.com/components/PHPUnit%20Bridge): `composer require --dev symfony/phpunit-bridge`
@@ -31,9 +35,16 @@ php bin/phpunit tests/Util
 php bin/phpunit tests/Util/CalculatorTest.php
 ```
 
-## Creating Symfony applications
+### Linter others tools
 
-Install web-skeleton: `symfony new my_project_name --version=current --full`
+```bash
+# Install
+composer require --dev friendsofphp/php-cs-fixer
+composer require --dev phpstan/phpstan
+composer require --dev phpstan/phpstan-strict-rules
+composer require --dev phpstan/phpstan-deprecation-rules
+composer require --dev phpstan/phpstan-symfony
+```
 
 ## Running Symfony Applications
 
@@ -52,6 +63,10 @@ Store the dumped data : `php bin/console server:dump --format=html > dump.html`
 ## Environnement
 
 Read [doc](https://symfony.com/doc/current/configuration.html#creating-a-new-environment)
+
+### Listing Environment Variables
+
+`php bin/console debug:container --env-vars`
 
 ## Profileur Web
 

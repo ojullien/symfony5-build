@@ -8,6 +8,9 @@ $finder = PhpCsFixer\Finder::create()
 return PhpCsFixer\Config::create()
     ->setRules([
         '@Symfony' => true,
+        'php_unit_strict' => true,
+        'strict_comparison' => true,
+        'strict_param' => true,
     ])
     ->setFinder($finder)
 ;

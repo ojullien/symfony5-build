@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace App\Tests\Controller;
 
@@ -21,7 +22,7 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
  *
  * @package App\Tests\Controller
  */
-class IndexControllerTest extends WebTestCase
+class HelloControllerTest extends WebTestCase
 {
     /**
      *
@@ -37,7 +38,7 @@ class IndexControllerTest extends WebTestCase
         $client->catchExceptions(false);
         $client->request('GET', '/hello-world');
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Hello World','Sans argument, la page Hello World ne fonctionne pas');
+        $this->assertSelectorTextContains('h1', 'Hello World', 'Sans argument, la page Hello World ne fonctionne pas');
     }
 
     /**
@@ -73,5 +74,4 @@ class IndexControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorExists('p:contains("Bienvenue parmi nous zozor !")', 'L\'événement ne fonctionne pas');
     }
-
 }

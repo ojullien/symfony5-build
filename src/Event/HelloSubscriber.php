@@ -12,9 +12,9 @@ class HelloSubscriber implements EventSubscriberInterface
     private const DEFAULT_NAME = 'world';
 
     /**
-     * @return array
+     * @return array<string,string>
      */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [HelloEvent::NAME => 'onResponse'];
     }
@@ -28,7 +28,7 @@ class HelloSubscriber implements EventSubscriberInterface
         $sName = $theEvent->getName();
 
         // Update the reponse
-        if (0 != \strcasecmp($sName, self::DEFAULT_NAME)) {
+        if (0 !== \strcasecmp($sName, self::DEFAULT_NAME)) {
             $httpResponse = $theEvent->getHttpResponse();
             $sContent = $httpResponse->getContent();
             if (\is_string($sContent)) {
@@ -42,8 +42,10 @@ class HelloSubscriber implements EventSubscriberInterface
      */
     private function updateContent(string $sContent, string $sName): string
     {
-        return \str_replace('</h1>',
+        return \str_replace(
+            '</h1>',
             \sprintf('</h1><p>Bienvenue parmi nous %s !</p>', $sName),
-            $sContent);
+            $sContent
+        );
     }
 }

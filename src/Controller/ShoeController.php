@@ -14,9 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ShoeController extends AbstractController
 {
-    /**
-     * @Route("/shoe", name="shoe")
-     */
+    #[Route('/shoe', name: 'shoe', methods: ['GET', 'POST'])]
     public function index(Request $request): Response
     {
         // creates a shoe object and initializes some data for this example

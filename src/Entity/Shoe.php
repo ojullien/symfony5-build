@@ -8,6 +8,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Shoe
 {
+    /**
+     * @var array<Size>
+     */
     private array $aSizes;
 
     /**
@@ -23,14 +26,9 @@ class Shoe
     private string $sDescription;
 
     /**
-     * @param string $sName
-     * @param float  $fPrice
-     * @param string $sDescription
-     * @param array  $aSizes
-     *
-     * @return void
+     * @param array<Size> $aSizes
      */
-    public function __construct($sName = '', $fPrice = 0.0, $sDescription = '', $aSizes = [])
+    public function __construct(string $sName = '', float $fPrice = 0.0, string $sDescription = '', array $aSizes = [])
     {
         $this->sName = $sName;
         $this->fPrice = $fPrice;
@@ -83,12 +81,17 @@ class Shoe
         return $this;
     }
 
+    /**
+     * @return array<Size>
+     */
     public function getSizes(): array
     {
         return $this->aSizes;
     }
 
     /**
+     * @param array<Size> $aSizes
+     *
      * @return Shoe
      */
     public function setSizes(array $aSizes): self
@@ -114,7 +117,7 @@ class Shoe
     }
 
     /**
-     * @return void
+     * @return Shoe
      */
     public function removeSize(Size $pSize): self
     {
