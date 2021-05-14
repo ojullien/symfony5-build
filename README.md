@@ -170,6 +170,24 @@ Uses this command to create the migration: `php bin/console make:migration`
 
 Uses this command to run the migration: `php bin/console doctrine:migrations:migrate`
 
+## Security
+
+### Installation
+
+Read the [doc](https://symfony.com/doc/current/security.html)
+
+### Create your User Class
+
+```bash
+php bin/console make:user
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+```
+
+### Generating the Login Form
+
+
+
 ## Get ready for production
 
 ### Clear the cache
